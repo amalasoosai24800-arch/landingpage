@@ -370,7 +370,7 @@ Find out if you’re building equity or renting attention.
   <div class="form-box">
     <h2>Brand Foundation Audit Request</h2>
 
-    <form method="POST" action="https://script.google.com/macros/s/AKfycbxhEtTF0sVJ7bJ7WF7DAmXsLgfO02gPg3K-l85LJRENqubZdihZuH4f0PF3iqu8SL4h/exec"></form>
+    <form id="auditForm" method="POST" action="https://script.google.com/macros/s/AKfycbxhEtTF0sVJ7bJ7WF7DAmXsLgfO02gPg3K-l85LJRENqubZdihZuH4f0PF3iqu8SL4h/exec"></form>
 
       <input type="text" name="Name" placeholder="Full Name" required>
       <input type="email" name="Email" placeholder="Work Email" required>
@@ -427,7 +427,9 @@ function closeForm(){
   document.getElementById('auditFormSection').classList.remove('active');
 }
 
-
+document.getElementById("auditForm").addEventListener("submit", function(){
+  document.querySelector(".btn").innerText = "Submitting...";
+});
 
 
 </script>
