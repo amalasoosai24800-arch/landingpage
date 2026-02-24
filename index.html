@@ -23,28 +23,35 @@ body{
   color:var(--text);
 }
 
-/* ===== MAIN LAYOUT ===== */
 .wrapper{
   display:flex;
   flex-direction:column;
   min-height:100vh;
 }
 
-/* ===== IMAGE HEADER (Mobile First) ===== */
+/* ===== VIDEO HEADER ===== */
+
 .image-header{
   height:220px;
-  background:url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1000&q=80') center/cover no-repeat;
   position:relative;
+  overflow:hidden;
+}
+
+.image-header video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
 }
 
 .image-header::after{
   content:'';
   position:absolute;
   inset:0;
-  background:linear-gradient(to bottom,rgba(0,0,0,0.6),rgba(0,0,0,0.9));
+  background:linear-gradient(to bottom,rgba(0,0,0,0.4),rgba(0,0,0,0.9));
 }
 
 /* ===== STEP DOTS ===== */
+
 .steps{
   display:flex;
   justify-content:center;
@@ -72,6 +79,7 @@ body{
 }
 
 /* ===== CONTENT AREA ===== */
+
 .content-area{
   flex:1;
   display:flex;
@@ -98,6 +106,7 @@ body{
 }
 
 /* ===== TEXT ===== */
+
 h1{
   font-family:'Playfair Display',serif;
   font-size:26px;
@@ -142,6 +151,7 @@ ul li::before{
 }
 
 /* ===== BUTTONS ===== */
+
 .btn{
   margin-top:25px;
   padding:14px 30px;
@@ -182,6 +192,7 @@ ul li::before{
 }
 
 /* ===== DESKTOP ===== */
+
 @media(min-width:900px){
 
   .wrapper{
@@ -213,9 +224,8 @@ ul li::before{
   p, ul li{font-size:17px;}
 }
 
-
-
 /* ===== FORM SECTION ===== */
+
 .form-section{
   position:fixed;
   inset:0;
@@ -268,7 +278,11 @@ ul li::before{
 
 <div class="wrapper">
 
-<div class="image-header"></div>
+<div class="image-header">
+    <video autoplay muted loop playsinline>
+        <source src="YOUR_VIDEO_URL_HERE" type="video/mp4">
+    </video>
+</div>
 
 <div class="steps">
   <div class="step-dot active">1</div>
@@ -282,7 +296,7 @@ ul li::before{
 <div class="content-area">
 
 <div class="step-content active">
-<h1>Is Your Brand Built to Scale  <br>Or<br> Just Built to Spend?</h1>
+<h1>Is Your Brand Built to Scale <br>Or<br> Just Built to Spend?</h1>
 <p>If performance marketing paused tomorrow, would your brand still exist in memory?</p>
 <button class="btn" onclick="nextStep()">Begin Private Diagnostic</button>
 </div>
@@ -292,7 +306,8 @@ ul li::before{
 <p>Most D2C brands grow fast. Very few grow strong.</p>
 <p>High ROAS hides weak identity. Discounts hide weak differentiation. Ads hide forgettability.</p>
 <p>Scale amplifies what already exists.</p>
-        <p>If your foundations are unclear, scale only magnifies confusion.</p>
+<p>If your foundations are unclear, scale only magnifies confusion.</p>
+
 <div class="nav">
 <button onclick="prevStep()">Back</button>
 <button onclick="nextStep()">Continue</button>
@@ -301,8 +316,8 @@ ul li::before{
 
 <div class="step-content">
 <h2>Strategic Audit</h2>
-        <p>This is not a pitch call. This is not a creative presentation.</p>
-        <p>This is a 30-minute strategic audit covering:</p>
+<p>This is not a pitch call. This is not a creative presentation.</p>
+<p>This is a 30-minute strategic audit covering:</p>
 
 <ul>
 <li>Brand Positioning</li>
@@ -312,13 +327,14 @@ ul li::before{
 <li>Memory Structures</li>
 <li>Long-term Defensibility</li>
 </ul>
+
 <p>You’ll leave with:</p>
-        <ul>
-            <li>Brand Strength Snapshot</li>
-            <li>3 Immediate Corrections</li>
-            <li>1 Strategic Priority</li>
-        </ul>
-        <p>Whether we work together or not.</p>
+<ul>
+<li>Brand Strength Snapshot</li>
+<li>3 Immediate Corrections</li>
+<li>1 Strategic Priority</li>
+</ul>
+
 <div class="nav">
 <button onclick="prevStep()">Back</button>
 <button onclick="nextStep()">Continue</button>
@@ -333,6 +349,7 @@ ul li::before{
 <li>Feel growth is happening — but clarity isn’t</li>
 <li>Want brand equity, not just revenue spikes</li>
 </ul>
+
 <div class="nav">
 <button onclick="prevStep()">Back</button>
 <button onclick="nextStep()">Continue</button>
@@ -341,8 +358,9 @@ ul li::before{
 
 <div class="step-content">
 <h2>Elegans builds what campaigns stand on.</h2>
-        <p>We help founders move from visibility to distinctiveness.</p>
-        <p>From growth to brand gravity.</p>
+<p>We help founders move from visibility to distinctiveness.</p>
+<p>From growth to brand gravity.</p>
+
 <div class="nav">
 <button onclick="prevStep()">Back</button>
 <button onclick="nextStep()">Continue</button>
@@ -367,30 +385,30 @@ Find out if you’re building equity or renting attention.
 </div>
 
 <div class="form-section" id="auditFormSection">
-  <div class="form-box">
-    <h2>Brand Foundation Audit Request</h2>
+<div class="form-box">
+<h2>Brand Foundation Audit Request</h2>
 
-    <form id="auditForm" method="POST" action="https://script.google.com/macros/s/AKfycbxhEtTF0sVJ7bJ7WF7DAmXsLgfO02gPg3K-l85LJRENqubZdihZuH4f0PF3iqu8SL4h/exec"></form>
+<form id="auditForm" method="POST" action="https://script.google.com/macros/s/AKfycbzxt5GTzHYZPw3U2DxLIo8p25rqxv7v4J-MImTpQ6v9lIUbQAxSS_quFlo_DCw-_igt/exec">
 
-      <input type="text" name="Name" placeholder="Full Name" required>
-      <input type="email" name="Email" placeholder="Work Email" required>
-      <input type="text" name="Brand" placeholder="Brand Name" required>
-      <input type="text" name="Revenue" placeholder="Monthly Revenue (₹)" required>
-      <input type="text" name="Website" placeholder="Website URL" required>
+<input type="text" name="Name" placeholder="Full Name" required>
+<input type="email" name="Email" placeholder="Work Email" required>
+<input type="text" name="Brand" placeholder="Brand Name" required>
+<input type="text" name="Revenue" placeholder="Monthly Revenue (₹)" required>
+<input type="text" name="Website" placeholder="Website URL" required>
 
-      <textarea name="Clarity" placeholder="What feels unclear in your brand right now?" rows="4"></textarea>
+<textarea name="Clarity" placeholder="What feels unclear in your brand right now?" rows="4"></textarea>
 
-      <button type="submit" class="btn">Submit Request</button>
+<button type="submit" class="btn">Submit Request</button>
 
-      <div class="nav">
-        <button type="button" onclick="closeForm()">Cancel</button>
-      </div>
+</form>
 
-    </form>
-  </div>
+<div class="nav">
+<button type="button" onclick="closeForm()">Cancel</button>
 </div>
 
 </div>
+</div>
+
 </div>
 
 <script>
@@ -419,7 +437,7 @@ function prevStep(){
   }
 }
 
-function openForm(){
+function openForm(){ 
   document.getElementById('auditFormSection').classList.add('active');
 }
 
@@ -427,11 +445,27 @@ function closeForm(){
   document.getElementById('auditFormSection').classList.remove('active');
 }
 
-document.getElementById("auditForm").addEventListener("submit", function(){
-  document.querySelector(".btn").innerText = "Submitting...";
+document.getElementById("auditForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const form = e.target;
+  const submitBtn = form.querySelector(".btn");
+
+  submitBtn.innerText = "Submitting...";
+
+  fetch(form.action, {
+    method: "POST",
+    body: new FormData(form)
+  })
+  .then(response => response.text())
+  .then(() => {
+    submitBtn.innerText = "Submitted Successfully";
+    form.reset();
+  })
+  .catch(() => {
+    submitBtn.innerText = "Submission Failed";
+  });
 });
-
-
 </script>
 
 </body>
